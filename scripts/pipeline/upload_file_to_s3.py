@@ -16,7 +16,7 @@ def main():
     client = session.client('s3')
 
     response = client.upload_file(
-        Filename=local_path + time.time(),
+        Filename=local_path + "_" + str(time.time()),
         Bucket=bucket_name,
         Key=aws_key
     )

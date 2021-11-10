@@ -1,6 +1,5 @@
 import boto3
 import sys
-import time
 
 def main():
     bucket_name=sys.argv[1]
@@ -16,7 +15,7 @@ def main():
     client = session.client('s3')
 
     response = client.upload_file(
-        Filename=local_path + "_" + str(time.time()),
+        Filename=local_path,
         Bucket=bucket_name,
         Key=aws_key
     )

@@ -2,7 +2,9 @@ bucket_name=$1
 aws_key=$2
 aws_access_key=$3
 aws_access_secret=$4
-local_path=$5
+file_name=$5
+timestamp=$(date +%s)
+local_path = "{$file_name}_{timestamp}"
 
 # Remove any existing versions of a ZIP
 rm -rf $local_path

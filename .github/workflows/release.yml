@@ -1,0 +1,12 @@
+name: ReleaseCI
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Backup to S3
+      run: bash scripts/pipeline/release.sh test-github-action-duongtt "folderbackup/myapp.zip" AKIAQHN5IJ2GIGWMWPHX qsUrDaB5150ozjmTkMiIAhuQZpfwAAhHZqKO+2vJ "myapp.zip"

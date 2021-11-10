@@ -9,4 +9,4 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Backup to S3
-      run: timestamp=$(date +%s) && bash scripts/pipeline/release.sh test-github-action-duongtt "folderbackup/myapp.zip" AKIAQHN5IJ2GIGWMWPHX qsUrDaB5150ozjmTkMiIAhuQZpfwAAhHZqKO+2vJ "myapp_${timestamp}.zip"
+      run: timestamp=$(date +%s) && bash scripts/pipeline/release.sh test-github-action-duongtt "folderbackup/myapp_${timestamp}.zip" AWS_KEY_ACCESS AWS_KEY_SECRET "myapp.zip"
